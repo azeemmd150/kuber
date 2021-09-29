@@ -1,9 +1,14 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: azm-nodejs-deployment
+  name: node-deployment
+  labels:
+    app: node
 spec:
-  replicas: 1
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node
   template:
     metadata:
       labels:
@@ -12,6 +17,5 @@ spec:
       containers:
       - name: node
         image: azeemmd03/hello-world
-        imagePullPolicy: Always
         ports:
         - containerPort: 3000
