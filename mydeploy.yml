@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: node
-        image: azeemmd03/hello-world
+        image: imageName
         ports:
         - containerPort: 3000
